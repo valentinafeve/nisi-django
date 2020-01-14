@@ -2,17 +2,13 @@
 
 ## Endpoints
 
-### Facebook followings
+### GET Facebook followings
 * Enpoint
 fd/fbfollowings/
 * input
 * output
-### fd/igfollowings/
-* Endpoint
-fd/fbfollowings/
-* inputs
-* output
-###
+
+### GET Notifications
 * Endpoint
   fd/notifications/
 * input
@@ -31,7 +27,7 @@ fd/fbfollowings/
     ]
     ```
 
-###
+### GET Near users
 * Endpoint
   map/nearusers/', map_views.near_users),
 * input
@@ -48,7 +44,7 @@ fd/fbfollowings/
   ]
   ```
 
-###
+### POST Update location
 * Endpoint
   map/updatelocation
 * input
@@ -63,7 +59,7 @@ fd/fbfollowings/
 * output
   DEFAULT
 
-###
+### POST Follow somebody
 * Endpoint
   net/follow
 * input
@@ -73,7 +69,7 @@ fd/fbfollowings/
 * output
   DEFAULT
 
-###
+### POST Rate somebody
 * Endpoint
   net/rate/
 * input
@@ -83,7 +79,7 @@ fd/fbfollowings/
 * output
   DEFAULT
 
-###
+### GET Somebody's public profile.
 * Endpoint
   net/profile/
 * input
@@ -116,7 +112,7 @@ fd/fbfollowings/
     }
   ```
 
-###
+### GET My profile
 * Endpoint
   nu/profile/
 * input
@@ -156,7 +152,7 @@ fd/fbfollowings/
   }
   ```
 
-###
+### POST Sign up
 * Endpoint
   nu/signup/
 * input
@@ -172,7 +168,7 @@ fd/fbfollowings/
   HTTP201 if created
 
 
-###
+### POST Sign in
 * Endpoint
   nu/signin/
 * input
@@ -185,28 +181,42 @@ fd/fbfollowings/
 * output
   DEFAULT
 
-###
-* Endpoint
-  nu/settings/
-* input
-* output
-
-###
-* Endpoint
-  nu/updatesetting/
-* input
-* output
-
-###
+### POST Add social network
 * Endpoint
   nu/addsn/
 * input
+  ```json
+  {
+    sn:{
+      code: SN_CODE,
+      username: "Username in the social network."
+    }
+  }
+  ```
 * output
 
 ### More
 
 #### DEFAULT
->
 * HTTP200 if okay.
 * HTTP40x is client error.
 * HTTP50x if server error.
+
+#### NOTIFICATION_TYPE
+
+* 0: Nisi info.
+* 1: _username_ is following me.
+* 2: _username_ has rated me.
+* 3: _username_ has commented a post.
+
+#### SN_CODE
+* "tg": "Telegram"
+* "tw": "Twitter"
+* "ig": "Instagram"
+* "fb": "Facebook"
+
+### SN_STATE
+* 0: Is not added
+* 1: Verified
+* 2: In process
+* -1: Error
