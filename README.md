@@ -6,13 +6,21 @@
 * Enpoint
 fd/fbfollowings/
 * input
+```
+ None
+```
 * output
+```
+ DEFAULT
+```
 
 ### GET Notifications
 * Endpoint
   fd/notifications/
 * input
-  None
+  ```
+   None
+  ```
 * output
   ```json
     [
@@ -31,7 +39,9 @@ fd/fbfollowings/
 * Endpoint
   map/nearusers/', map_views.near_users),
 * input
-  None
+  ```
+   None
+  ```
 * output
   ```json
   [
@@ -57,35 +67,47 @@ fd/fbfollowings/
   }
   ```
 * output
-  DEFAULT
+  ```
+   DEFAULT
+  ```
 
 ### POST Follow somebody
 * Endpoint
   net/follow
 * input
+  ```json
   {
     username: "Username of the user who will be followed."
   }
+  ```
 * output
-  DEFAULT
+  ```
+   DEFAULT
+  ```
 
 ### POST Rate somebody
 * Endpoint
   net/rate/
 * input
+  ```json
   {
     rating: rating
   }
+  ```
 * output
-  DEFAULT
+  ```
+   DEFAULT
+  ```
 
 ### GET Somebody's public profile.
 * Endpoint
   net/profile/
 * input
+  ```json
   {
     username: "Username with the requested profile."
   }
+  ```
 * output
   ```json
     {
@@ -116,7 +138,9 @@ fd/fbfollowings/
 * Endpoint
   nu/profile/
 * input
-  None
+  ```
+   None
+  ```
 * output
   ```json
   {
@@ -165,7 +189,9 @@ fd/fbfollowings/
   }
   ```
 * output
-  HTTP201 if created
+  ```
+   HTTP 201 if created.
+  ```
 
 
 ### POST Sign in
@@ -179,7 +205,9 @@ fd/fbfollowings/
   }
   ```
 * output
-  DEFAULT
+  ```
+   DEFAULT
+  ```
 
 ### POST Add social network
 * Endpoint
@@ -194,6 +222,9 @@ fd/fbfollowings/
   }
   ```
 * output
+  ```
+   DEFAULT
+  ```
 
 ### More
 
